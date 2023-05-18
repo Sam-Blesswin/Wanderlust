@@ -17,7 +17,8 @@ READ : GET
 UPDATE : PUT / PATCH
 DELETE : DELETE
 
-Endpoints
+## Endpoints
+
 In an API, an endpoint is a URL that clients can use to request information or perform an action. It's like a door or entrance to access a specific resource or feature of the API.
 
 Here are some examples of API endpoints:
@@ -30,11 +31,19 @@ PUT /users/{id} - This endpoint updates an existing user's details in the API. T
 
 DELETE /users/{id} - This endpoint deletes an existing user from the API. The client sends a DELETE request with the user's ID, and the API responds with a success message.
 
-Middleware
-Middlewares in HTTP servers are functions that process requests before they reach the final handler function. They are used to extract data from the request, authenticate the request, or perform other pre-processing tasks. They are called "middlewares" because they sit in the middle between the request and the final handler function.
+## Response codes:
 
-Response codes:
 200 - Success
 201 - Created
 204 - No Content
 404 - Not Found
+
+## Middleware
+
+Middlewares in HTTP servers are functions that process requests before they reach the final handler function. They are used to extract data from the request, authenticate the request, or perform other pre-processing tasks. They are called "middlewares" because they sit in the middle between the request and the final handler function.
+
+Middleware stack
+When a request is received by a server, it passes through the middleware stack, where each middleware function can modify the request or response objects, perform additional processing, or invoke the next middleware function in the stack. This allows for modular and reusable code that can handle common tasks such as authentication, logging, error handling, and more.
+
+Order of Execution
+In Node.js, middleware functions are executed in the order they are defined or added to the application's middleware stack. The order of execution is important as it determines how the request flows through the middleware functions and how each middleware can manipulate the request and response objects.

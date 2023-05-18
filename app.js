@@ -5,10 +5,24 @@ const fs = require('fs');
 const express = require('express');
 const app = express();
 
+const morgan = require('morgan');
+
 /**
  * Middleware
  */
+app.use(morgan('dev'));
 app.use(express.json());
+
+//Custom Middlewares
+app.use((req, res, next) => {
+  console.log('Hello from middleware');
+  next();
+});
+
+app.use((req, res, next) => {
+  req.requestTime = new Date().toISOString();
+  next();
+});
 
 /**
  * Read a file
@@ -19,20 +33,21 @@ const tours = JSON.parse(
 );
 
 /**
- * HTTP Methods
+ * Route handlers
  */
-
-app.get('/api/v1/tours', (req, res) => {
+const getAllTours = (req, res) => {
+  console.log(req.requestTime);
   res.status(200).json({
     status: 'success',
+    requestedAt: req.requestTime,
     result: tours.length,
     data: {
       tours, // == tours : tours
     },
   });
-});
+};
 
-app.get('/api/v1/tours/:id', (req, res) => {
+const getTour = (req, res) => {
   console.log(req.params);
   const tour = tours.find((el) => el.id == req.params.id);
   if (!tour) {
@@ -47,9 +62,9 @@ app.get('/api/v1/tours/:id', (req, res) => {
       tour,
     },
   });
-});
+};
 
-app.post('/api/v1/tours', (req, res) => {
+const addTour = (req, res) => {
   //console.log(req.body);
   const newId = tours[tours.length - 1].id + 1;
   const newTour = Object.assign({ id: newId }, req.body);
@@ -68,9 +83,9 @@ app.post('/api/v1/tours', (req, res) => {
       });
     }
   );
-});
+};
 
-app.patch('/api/v1/tours/:id', (req, res) => {
+const updateTour = (req, res) => {
   const tour = tours.find((el) => el.id == req.params.id);
   if (!tour) {
     return res.status(404).json({
@@ -82,9 +97,9 @@ app.patch('/api/v1/tours/:id', (req, res) => {
     status: 'success',
     data: { tour: '<Updated tour successfully>' },
   });
-});
+};
 
-app.delete('/api/v1/tours/:id', (req, res) => {
+const deleteTour = (req, res) => {
   const tour = tours.find((el) => el.id == req.params.id);
   if (!tour) {
     return res.status(404).json({
@@ -96,7 +111,65 @@ app.delete('/api/v1/tours/:id', (req, res) => {
     status: 'success',
     data: null,
   });
-});
+};
+
+const addUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined',
+  });
+};
+const getAllUsers = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined',
+  });
+};
+const getUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined',
+  });
+};
+const updateUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined',
+  });
+};
+const deleteUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined',
+  });
+};
+
+/**
+ * Routes
+ */
+
+// app.get('/api/v1/tours', getAllTours);
+// app.get('/api/v1/tours/:id', getTour);
+// app.post('/api/v1/tours', addTour);
+// app.patch('/api/v1/tours/:id', updateTour);
+// app.delete('/api/v1/tours/:id', deleteTour);
+
+//Tour Routes
+const tourRouter = express.Router();
+tourRouter.route('/').get(getAllTours).post(addTour);
+tourRouter.route('/:id').get(getTour).patch(updateTour).delete(deleteTour);
+
+//user Routes
+const userRouter = express.Router();
+userRouter.route('/').get(getAllUsers).post(addUser);
+userRouter.route('/:id').get(getUser).patch(updateUser).delete(deleteUser);
+
+//Mounting the Routers
+app.use('/api/v1/tours', tourRouter);
+app.use('/api/v1/users', userRouter);
+/**
+ * Server Starts Here
+ */
 
 const port = 3000;
 app.listen(port, () => {
