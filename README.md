@@ -5,17 +5,22 @@ A sample project to learn backend tech stack (Express - Node - MongoDB)
 To run the project:
 nodemon app.js
 
-Express
-Express is a node.js framework with high level of abstraction
+## Packages
 
-REST Methods
+Express
+Express is a node.js framework with high level of abstraction.
+
+Morgan
+morgan is a popular middleware for Node.js web applications, primarily used for HTTP request logging. It provides a simple and customizable logging solution that can be easily integrated into Express.js or other Node.js frameworks.
 
 ## CRUD : HTTP METHODS
 
-CREATE : POST
-READ : GET
-UPDATE : PUT / PATCH
-DELETE : DELETE
+REST Methods
+
++CREATE : POST
++READ : GET
++UPDATE : PUT / PATCH
++DELETE : DELETE
 
 ## Endpoints
 
@@ -33,10 +38,11 @@ DELETE /users/{id} - This endpoint deletes an existing user from the API. The cl
 
 ## Response codes:
 
-200 - Success
-201 - Created
-204 - No Content
-404 - Not Found
++200 - Success
++201 - Created
++204 - No Content
++404 - Not Found
++500 - Internal Server Error
 
 ## Middleware
 
