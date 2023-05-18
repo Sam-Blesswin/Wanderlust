@@ -7,20 +7,22 @@ nodemon app.js
 
 ## Packages
 
-Express
+### Express
+
 Express is a node.js framework with high level of abstraction.
 
-Morgan
+### Morgan
+
 morgan is a popular middleware for Node.js web applications, primarily used for HTTP request logging. It provides a simple and customizable logging solution that can be easily integrated into Express.js or other Node.js frameworks.
 
 ## CRUD : HTTP METHODS
 
 REST Methods
 
-+CREATE : POST
-+READ : GET
-+UPDATE : PUT / PATCH
-+DELETE : DELETE
+- CREATE : POST
+- READ : GET
+- UPDATE : PUT / PATCH
+- DELETE : DELETE
 
 ## Endpoints
 
@@ -38,11 +40,11 @@ DELETE /users/{id} - This endpoint deletes an existing user from the API. The cl
 
 ## Response codes:
 
-+200 - Success
-+201 - Created
-+204 - No Content
-+404 - Not Found
-+500 - Internal Server Error
+- 200 - Success
+- 201 - Created
+- 204 - No Content
+- 404 - Not Found
+- 500 - Internal Server Error
 
 ## Middleware
 
