@@ -1,2 +1,40 @@
 # Wanderlust
+
 A sample project to learn backend tech stack (Express - Node - MongoDB)
+
+To run the project:
+nodemon app.js
+
+Express
+Express is a node.js framework with high level of abstraction
+
+REST Methods
+
+## CRUD : HTTP METHODS
+
+CREATE : POST
+READ : GET
+UPDATE : PUT / PATCH
+DELETE : DELETE
+
+Endpoints
+In an API, an endpoint is a URL that clients can use to request information or perform an action. It's like a door or entrance to access a specific resource or feature of the API.
+
+Here are some examples of API endpoints:
+
+GET /users - This endpoint lets clients retrieve a list of users from the API. For instance, a client can request this endpoint to get a list of users' names, emails, and other details.
+
+POST /users - This endpoint is used to create a new user in the API. The client sends a POST request with the new user's details, such as name and email, and the API responds with a success message.
+
+PUT /users/{id} - This endpoint updates an existing user's details in the API. The client sends a PUT request with the user's ID and updated details, and the API responds with a success message.
+
+DELETE /users/{id} - This endpoint deletes an existing user from the API. The client sends a DELETE request with the user's ID, and the API responds with a success message.
+
+Middleware
+Middlewares in HTTP servers are functions that process requests before they reach the final handler function. They are used to extract data from the request, authenticate the request, or perform other pre-processing tasks. They are called "middlewares" because they sit in the middle between the request and the final handler function.
+
+Response codes:
+200 - Success
+201 - Created
+204 - No Content
+404 - Not Found
