@@ -2,8 +2,8 @@
 
 A sample project to learn backend tech stack (Express - Node - MongoDB)
 
-To run the project:
-npm start
+To run the project: "npm start"
+
 package.json is configured to run "nodemon server.js"
 
 ## Packages
