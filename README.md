@@ -2,7 +2,7 @@
 
 A sample project to learn backend tech stack (Express - Node - MongoDB)
 
-To run the project: "npm start"
+To run the project: "npm run start:dev"
 
 package.json is configured to run "nodemon server.js"
 
@@ -15,6 +15,10 @@ Express is a node.js framework with high level of abstraction.
 ### Morgan
 
 morgan is a popular middleware for Node.js web applications, primarily used for HTTP request logging. It provides a simple and customizable logging solution that can be easily integrated into Express.js or other Node.js frameworks.
+
+### dotenv
+
+The dotenv npm package is used to load environment variables from a .env file into Node.js applications, simplifying the management of configuration settings.
 
 ## CRUD : HTTP METHODS
 

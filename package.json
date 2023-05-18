@@ -4,7 +4,7 @@
   "description": "Learning node,express and monoDB",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start:dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/SAM-BLESSWIN/Wanderlust#readme",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "morgan": "^1.10.0"
   }

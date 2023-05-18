@@ -7,8 +7,15 @@ const morgan = require('morgan');
 /**
  * Middleware
  */
-app.use(morgan('dev'));
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
 app.use(express.json());
+
+/**
+ * Middle ware to use static files
+ */
+app.use(express.static(`${__dirname}/public`));
 
 //Custom Middlewares
 app.use((req, res, next) => {
