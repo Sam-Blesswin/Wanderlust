@@ -10,15 +10,31 @@ package.json is configured to run "nodemon server.js"
 
 ### Express
 
+command : "npm i express"
+
 Express is a node.js framework with high level of abstraction.
 
 ### Morgan
 
+command : "npm i morgan"
+
 morgan is a popular middleware for Node.js web applications, primarily used for HTTP request logging. It provides a simple and customizable logging solution that can be easily integrated into Express.js or other Node.js frameworks.
 
-### dotenv
+### Dotenv
+
+command : "npm i dotenv"
 
 The dotenv npm package is used to load environment variables from a .env file into Node.js applications, simplifying the management of configuration settings.
+
+### ESLint
+
+command : "npm i eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-config-airbnb eslint-plugin-node eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react --save-dev"
+
+ESLint is a customizable linter that enforces code style and identifies errors.It can be configured with various rulesets to fit the specific requirements of a project.
+
+### Prettier
+
+Prettier is a code formatter that ensures consistent formatting.
 
 ## CRUD : HTTP METHODS
 
