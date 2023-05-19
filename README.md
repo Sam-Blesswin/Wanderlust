@@ -36,6 +36,10 @@ ESLint is a customizable linter that enforces code style and identifies errors.I
 
 Prettier is a code formatter that ensures consistent formatting.
 
+### Mongoose
+
+Mongoose simplifies working with MongoDB databases by providing an object modeling framework and tools for data validation, querying, and manipulation.
+
 ## CRUD : HTTP METHODS
 
 REST Methods
@@ -59,7 +63,7 @@ PUT /users/{id} - This endpoint updates an existing user's details in the API. T
 
 DELETE /users/{id} - This endpoint deletes an existing user from the API. The client sends a DELETE request with the user's ID, and the API responds with a success message.
 
-## Response codes:
+## Response codes
 
 - 200 - Success
 - 201 - Created
