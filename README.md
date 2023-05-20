@@ -82,6 +82,26 @@ When a request is received by a server, it passes through the middleware stack, 
 Order of Execution
 In Node.js, middleware functions are executed in the order they are defined or added to the application's middleware stack. The order of execution is important as it determines how the request flows through the middleware functions and how each middleware can manipulate the request and response objects.
 
-### MongoDb Schema
+## MongoDb Schema
 
 MongoDB schema is a flexible structure that defines the organization and layout of data stored in MongoDB. It consists of collections, documents, and fields, allowing for dynamic and schema-less data modeling.
+
+## MVC Architecture
+
+MVC (Model-View-Controller) is a design pattern used in backend programming to organize code into three components:
+
+1. Model: Represents the data and business logic. It interacts with the database and defines the structure of the data.
+
+2. View: Displays the data to the user. It generates the user interface and presents the information in a format that users can understand.
+
+3. Controller: Handles user input and acts as a mediator between the Model and View. It receives requests from the user, retrieves or updates data from the Model, and updates the View accordingly.
+
+For example, in a user registration system:
+
+- Model: Defines the user data structure, validates input, and saves/retrieves data from the database.
+
+- View: Displays the registration form and shows success/error messages to the user.
+
+- Controller: Handles the registration request, validates the input, creates a new user record in the Model, and updates the View to show the appropriate response.
+
+Using MVC helps separate concerns, makes code modular and easier to maintain, and enables multiple views to interact with the same underlying data without affecting each other.

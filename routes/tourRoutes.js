@@ -8,7 +8,7 @@ const router = express.Router();
 /**
  * Param Middleware
  */
-router.param('id', tourController.checkID);
+//router.param('id', tourController.checkID);
 
 router
   .route('/')
