@@ -6,6 +6,10 @@ To run the project: "npm run start:dev"
 
 package.json is configured to run "nodemon server.js"
 
+## To Get Started
+
+Have your own mongoDb setup with credentials and config.env file
+
 ## Packages
 
 ### Express
