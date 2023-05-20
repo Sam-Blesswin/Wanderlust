@@ -28,6 +28,52 @@ const app = require('./app');
 //console.log(process.env);
 
 /**
+ * Define Schema
+ */
+const tourSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, 'A tour must have a name'],
+    unique: true, //making sure only one tour with same name is allowed
+  },
+  rating: {
+    type: Number,
+    default: 4.5,
+  },
+  price: {
+    type: Number,
+    required: [true, 'A tour must have a price'],
+  },
+});
+
+/**
+ * Create a  Model from Schema
+ */
+const Tour = mongoose.model('Tour', tourSchema);
+
+/**
+ * Usage
+ */
+const newTour = new Tour({
+  name: 'The Mountain Hiker',
+  rating: 4.5,
+  price: 1000,
+});
+
+/**
+ * Save To Database
+ */
+
+newTour
+  .save()
+  .then((doc) => {
+    console.log('Tour saved successfully');
+  })
+  .catch((err) => {
+    console.log('ERROR😵', err);
+  });
+
+/**
  * Server Starts Here
  */
 const port = process.env.PORT || 8000;

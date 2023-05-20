@@ -81,3 +81,7 @@ When a request is received by a server, it passes through the middleware stack, 
 
 Order of Execution
 In Node.js, middleware functions are executed in the order they are defined or added to the application's middleware stack. The order of execution is important as it determines how the request flows through the middleware functions and how each middleware can manipulate the request and response objects.
+
+### MongoDb Schema
+
+MongoDB schema is a flexible structure that defines the organization and layout of data stored in MongoDB. It consists of collections, documents, and fields, allowing for dynamic and schema-less data modeling.
