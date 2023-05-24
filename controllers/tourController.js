@@ -35,14 +35,14 @@ exports.getAllTours = async (req, res) => {
     console.log(req.query);
 
     //BUILD QUERY
-    //1) Filtering
+    //1A) Filtering
     const queryObj = { ...req.query };
     const excludedFields = ['page', 'sort', 'limit', 'fields'];
     excludedFields.forEach((el) => delete queryObj[el]);
 
     console.log(queryObj);
 
-    //2) Advance Filtering
+    //1B) Advance Filtering
     //req.query : {difficulty : 'easy', duration : {gte : 5}}
     //mongoose query : {difficulty : 'easy', duration : {$gte : 5}}
     //gte, gt, lte, lt
@@ -52,7 +52,29 @@ exports.getAllTours = async (req, res) => {
 
     console.log(JSON.parse(queryStr));
 
-    const query = Tour.find(JSON.parse(queryStr));
+    let query = Tour.find(JSON.parse(queryStr)); //return a query
+
+    //2) SORTING
+    if (req.query.sort) {
+      const sortBy = req.query.sort.split(',').join(' ');
+      //eg : sort('price ratingsAverage')
+      //console.log(sortBy);
+      query = query.sort(sortBy);
+    } else {
+      query.sort('-createdAt'); //to sort it based on when it was created, latest at the top
+    }
+
+    //3) Field Limiting
+    if (req.query.fields) {
+      const fields = req.query.fields.split(',').join(' ');
+      //eg : select('name duration price')
+      //console.log(fields);
+      query = query.select(fields);
+    } else {
+      query = query.select('-__v'); //to exclude the __v field //'- fieldname' to exclude a field
+    }
+
+    //4) Pagination
 
     //EXECUTE QUERY
     const tours = await query;
