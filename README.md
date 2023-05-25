@@ -42,7 +42,15 @@ Prettier is a code formatter that ensures consistent formatting.
 
 ### Mongoose
 
+command : npm i mongoose
+
 Mongoose simplifies working with MongoDB databases by providing an object modeling framework and tools for data validation, querying, and manipulation.
+
+### NDB
+
+command : npm i ndb
+
+ndb is a powerful debugging tool for Node.js applications, developed by Google.
 
 ## CRUD : HTTP METHODS
 
@@ -109,3 +117,11 @@ For example, in a user registration system:
 - Controller: Handles the registration request, validates the input, creates a new user record in the Model, and updates the View to show the appropriate response.
 
 Using MVC helps separate concerns, makes code modular and easier to maintain, and enables multiple views to interact with the same underlying data without affecting each other.
+
+## Error Handling
+
+Debugger : Installed ndb package to debug code.
+
+Handling runtime operational errors : Problems that we can predict might happen, so we need to handle it in advance.
+
+By Setting up a global error handling middleware.
