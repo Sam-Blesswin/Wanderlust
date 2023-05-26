@@ -46,6 +46,12 @@ command : npm i mongoose
 
 Mongoose simplifies working with MongoDB databases by providing an object modeling framework and tools for data validation, querying, and manipulation.
 
+### validator
+
+command : npm i validator
+
+validator package is a widely-used library for validating and sanitizing strings in JavaScript.
+
 ### NDB
 
 command : npm i ndb

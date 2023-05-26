@@ -78,8 +78,8 @@ exports.createTour = catchAsync(async (req, res, next) => {
 exports.updateTour = catchAsync(async (req, res, next) => {
   //console.log(req.body);
   const tour = await Tour.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-    runValidators: true,
+    new: true, //By default,method returns the original document before the update, This option specifies that you want to return the updated document after the update operation is performed
+    runValidators: true, //This option instructs Mongoose to run the model's validators on the update operation
   });
   if (!tour) {
     return next(new AppError('No tour found with that ID', 404));
