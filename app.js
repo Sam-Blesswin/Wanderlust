@@ -29,6 +29,7 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
+  //console.log(x); //error handling middleware gets called since x is not defined
   req.requestTime = new Date().toISOString();
   next();
 });

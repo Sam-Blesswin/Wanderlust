@@ -55,6 +55,8 @@ const handleValidationErrorDB = (err) => {
 /*
  *Error handling middleware
  */
+//Gets called whenever a next(err) i.e next with error is called
+//Gets called whenever a error occured in the middleware
 module.exports = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
   err.status = err.status || 'error';

@@ -2,7 +2,11 @@
 
 A sample project to learn backend tech stack (Express - Node - MongoDB)
 
-To run the project: "npm run start:dev"
+To run the project in development mode: npm run start:dev
+
+    "start:dev": "nodemon server.js",
+
+    "start:prod": "SET NODE_ENV=production&& nodemon server.js",
 
 package.json is configured to run "nodemon server.js"
 
